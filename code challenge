@@ -1,0 +1,32 @@
+/* Devoir Logiquement, une fonction peut prendre un nombre infini de paramètres. Cependant, en pratique,
+la plupart des langages de programmation imposent une limite ,le nombre de paramètres est limité par la mémoire disponible. 
+En général, il est préférable de limiter le nombre de paramètres pour des raisons de lisibilité et de maintenabilité du code.
+Dans certains cas, on peut utiliser des structures comme des listes ou des dictionnaires pour regrouper plusieurs valeurs en un seul paramètre.
+Quand j'ai executé sur un compilqteur en ligne j'ai obtenu 705 parametres sans eerreurs et sur mon pc j'ai eu plus de 1 000 000 de parametres*/
+
+#include <iostream>
+#include <vector>
+
+template<typename... Args>
+void testFunction(Args... args) {    
+}
+
+int main() {
+    int count = 0;
+
+    while (true) {
+        // Prépare un tableau d'arguments
+        std::vector<int> args(count, 0); // Tous les arguments sont des zéros
+
+        if (count > 0) {
+            // Appelle la fonction avec le bon nombre d'arguments
+            testFunction(args.data(), args.size()); // Appel avec un tableau de taille variable
+
+            std::cout << "Nombre de paramètres testés : " << count << std::endl; // Affiche le nombre de paramètres
+        }
+
+        count += 1; // Augmente le nombre de paramètres de 1 à chaque itération
+    }
+
+    return 0;
+}
