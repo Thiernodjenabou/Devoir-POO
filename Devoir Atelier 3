@@ -9,7 +9,7 @@ class Voiture{
      modele = "inconnu";
      annee = 0;
      kilometrage = 0;
-     Vitesse = 0;
+     vitesse = 0;
     }
     Voiture(string marque,string  modele,int annee,
     float  kilometrage,float Vitesse){
@@ -17,7 +17,7 @@ class Voiture{
      this->modele = modele;
      this->annee = annee;
      this->kilometrage = kilometrage ;
-     this->Vitesse = vitesse;
+     this->vitesse = vitesse;
     }
     
     void accelerer(float valeur){
@@ -44,17 +44,17 @@ class Voiture{
     }
     ~Voiture(){
 
-        cout<<"la voiture est detruite!",
-    };
+        cout<<"la voiture est detruite!";
+    }
     
     private :
     string marque;
     string modele;
     int annee;
     float kilometrage;
-    float Vitesse;
+    float vitesse;
 
-}
+};
 int main(){
     return 0;
 }
